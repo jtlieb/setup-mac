@@ -152,46 +152,39 @@ if [[ $? -ne 1 ]]; then
   fi
 fi
 
-# get relevant git repos
-mkdir ~/git
+# # get relevant git repos
+# mkdir ~/git
 
-echo "cloning bash_profile"
-get_repo git@github.com:salmaanrizvi/bash_profile.git ~/git/bash_profile
+# echo "cloning bash_profile"
+# get_repo git@github.com:salmaanrizvi/bash_profile.git ~/git/bash_profile
 
-echo "symlinking bash_profile" 
-ln -is ~/git/bash_profile/.bash_profile ~/.bash_profile
-ln -is ~/git/bash_profile/.profile ~/.profile
+# echo "symlinking bash_profile" 
+# ln -is ~/git/bash_profile/.bash_profile ~/.bash_profile
+# ln -is ~/git/bash_profile/.profile ~/.profile
 
-## install iterm2
-echo "installing iTerm 2"
-install_zip https://iterm2.com/downloads/stable/iTerm2-3_3_9.zip "iTerm"
-if [[ $? -eq 0 ]]; then
-  get_repo git@github.com:salmaanrizvi/iTermSettings.git ~/git/iTermSettings
-  echo "done installing iTerm. please import preferences in General -> Preferences -> Load Preferences. waiting..."
-  open -Wn /Applications/iTerm.app  
-fi
+# ## install iterm2
+# echo "installing iTerm 2"
+# install_zip https://iterm2.com/downloads/stable/iTerm2-3_3_9.zip "iTerm"
+# if [[ $? -eq 0 ]]; then
+#   get_repo git@github.com:salmaanrizvi/iTermSettings.git ~/git/iTermSettings
+#   echo "done installing iTerm. please import preferences in General -> Preferences -> Load Preferences. waiting..."
+#   open -Wn /Applications/iTerm.app  
+# fi
 
-echo "installing Sublime"
-install_dmg "https://download.sublimetext.com/Sublime%20Text%20Build%203211.dmg" "Sublime"
-if [[ $? -eq 0 ]]; then
-  get_repo git@github.com:salmaanrizvi/SublimeSettings.git ~/git/SublimeSettings
-  sudo ln -is /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-  echo "done installing sublime. please install package control. waiting..."
-  open -Wn /Applications/Sublime\ Text.app
-  ln -is ~/git/SublimeSettings/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-fi
+# echo "installing Sublime"
+# install_dmg "https://download.sublimetext.com/Sublime%20Text%20Build%203211.dmg" "Sublime"
+# if [[ $? -eq 0 ]]; then
+#   get_repo git@github.com:salmaanrizvi/SublimeSettings.git ~/git/SublimeSettings
+#   sudo ln -is /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+#   echo "done installing sublime. please install package control. waiting..."
+#   open -Wn /Applications/Sublime\ Text.app
+#   ln -is ~/git/SublimeSettings/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+# fi
+
 
 echo "installing Spectacle"
 install_zip https://s3.amazonaws.com/spectacle/downloads/Spectacle+1.2.zip "Spectacle"
 
-echo "installing Alfred"
-install_dmg "https://cachefly.alfredapp.com/Alfred_4.0.9_1144.dmg" "Alfred"
-
-echo "installing Firefox"
-install_dmg "https://download.mozilla.org/?product=firefox-latest-ssl&os=osx&lang=en-US" "Firefox"
-
-echo "installing 1Password"
-install_pkg "https://app-updates.agilebits.com/download/OPM7" "1Password"
 
 echo "installing Slack"
 install_dmg "https://slack.com/ssb/download-osx" "Slack"
@@ -209,3 +202,4 @@ if [[ $? -ne 0 ]]; then
 fi
 
 brew install ripgrep tig node fzf bat hub kubectl helm jq kubectx tfenv fd
+brew install --cask brew zoom 1password 1password/tap/1password-cli brave-browser notion intellij-idea warp visual-studio-code scroll-reverser
