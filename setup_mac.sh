@@ -202,4 +202,4 @@ if [[ $? -ne 0 ]]; then
 fi
 
 brew install ripgrep tig node fzf bat hub kubectl helm jq kubectx tfenv fd
-brew install --cask brew zoom 1password 1password/tap/1password-cli brave-browser notion intellij-idea warp visual-studio-code scroll-reverser
+brew install --cask zoom 1password 1password/tap/1password-cli brave-browser notion intellij-idea warp visual-studio-code scroll-reverser
