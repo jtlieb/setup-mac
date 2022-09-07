@@ -201,7 +201,40 @@ if [[ $? -ne 0 ]]; then
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-brew install ripgrep tig node fzf bat hub kubectl helm jq kubectx tfenv fd
-brew install --cask zoom 1password 1password/tap/1password-cli brave-browser notion intellij-idea warp visual-studio-code scroll-reverser
-# Reduces time for dock animation
-defaults write com.apple.dock autohide-time-modifier -float 0.25;killall Dock
+# Dev tools
+brew install \ 
+bat \ 
+fd \ 
+fzf \ 
+helm \ 
+hub \ 
+jq \ 
+kubectl \ 
+kubectx \ 
+node \ 
+ripgrep \ 
+tfenv \ 
+tig 
+
+# Desktop apps
+brew install --cask \ 
+1password \ 
+1password/tap/1password-cli \ 
+brave-browser \ 
+intellij-idea-ce \ 
+notion \ 
+scroll-reverser \ 
+spotify \ 
+visual-studio-code \ 
+warp \ 
+zoom
+
+# Tweaking dock
+defaults write com.apple.dock orientation right # dock location to right side
+defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.15
+defaults write com.apple.dock largesize -int 128
+defaults write com.apple.dock tilesize -integer 40
+
+# Insert all changes to dock above this line
+killall Dock
