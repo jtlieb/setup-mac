@@ -231,10 +231,11 @@ zoom
 
 # Tweaking dock
 defaults write com.apple.dock orientation right # dock location to right side
-defaults write com.apple.Dock autohide-delay -float 0
-defaults write com.apple.dock autohide-time-modifier -float 0.15
-defaults write com.apple.dock largesize -int 128
-defaults write com.apple.dock tilesize -integer 40
+defaults write com.apple.Dock autohide-delay -float 0 # show dock instantly
+defaults write com.apple.dock autohide-time-modifier -float 0.15 # speed up animation
+defaults write com.apple.dock largesize -int 128 # magnify size
+defaults write com.apple.dock tilesize -integer 40 # default size
+# defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}' # add spacer
 
 # Insert all changes to dock above this line
 killall Dock
